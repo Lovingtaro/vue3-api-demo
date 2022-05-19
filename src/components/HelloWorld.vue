@@ -1,6 +1,7 @@
 <template>
-  <div class="hello">
-  </div>
+  <button class="hello" @click="sayHi">
+    props,emit相关
+  </button>
 </template>
 <script>
 export default {
@@ -11,8 +12,8 @@ export default {
   emits:['sayHi'],
   setup(props,ctx){
     function sayHi(){
-      console.log('sayHi',props);
       ctx.emit('sayHi','apple')
+      // console.log('sayHi',props);
     }
     return {
       sayHi
@@ -26,15 +27,5 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
